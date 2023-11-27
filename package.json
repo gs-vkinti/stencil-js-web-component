@@ -1,6 +1,6 @@
 {
   "name": "stencil-js-web-component",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -35,5 +35,8 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "21.1.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

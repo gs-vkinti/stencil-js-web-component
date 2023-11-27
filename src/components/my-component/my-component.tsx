@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, State } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -26,7 +26,17 @@ export class MyComponent {
     return format(this.first, this.middle, this.last);
   }
 
+  timer: number;
+  @State() time: number = Date.now();
+
+  connectedCallback() {
+    this.timer = window.setInterval(() => {
+      this.time = Date.now();
+    }, 1000);
+  }
+
   render() {
+    // const time = new Date(this.time).toLocaleTimeString();
     return <div>Hello, World! I'm {this.getText()}</div>;
   }
 }
